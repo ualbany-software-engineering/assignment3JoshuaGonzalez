@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var awsCtrl = require("./awsCtrl");
 var cors = require('cors');
 var app = express();
 
@@ -14,7 +13,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use('/sign_s3', awsCtrl);
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
